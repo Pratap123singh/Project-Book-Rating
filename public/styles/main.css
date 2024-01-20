@@ -1,0 +1,92 @@
+body {
+    display: block;
+    margin: 0 auto;
+    padding: 5px auto;
+    max-width: 60rem;
+    background-color: #712cf9;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 20px;
+    color: Black;
+}
+
+h1 {
+    font-family: valkyrie_c4;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+
+h3, p {
+    color: white;
+}
+
+
+
+.box {
+    margin: 0;
+    padding: 5px;
+    border: 3px solid white;
+    background-color: lightblue;
+    border-radius: 5px;
+  }
+
+.container_1{
+    border: 2px solid white;
+    border-radius: 5px;
+    gap: 2px;
+}
+
+section{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+}
+
+
+.contactContainer{
+    border: 3px solid white;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+.col2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+button{
+    margin-left: 45%;
+}
+
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5px;
+}
+
+.row2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5px;
+}
+
+footer{
+    padding-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.summary{
+    height: 13rem;
+    resize: none;
+}

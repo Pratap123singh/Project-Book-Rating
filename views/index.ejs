@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+        <h1><u style="color:white;">Book Review by Pranjal📖☕</u></h1>
+        <h3>Books I have read.</h3>
+        <p>You can find below some of the good books which i have read.
+           <strong>This page will constantly update as I read more</strong>,
+           so bookmark it if you want to check back in a few months. </p>
+        <p>If you have any questions. You can also <a href="/contact"><span style="color: lightblue; font-weight: bold;">message me ✉</span> </a>.</p>
+
+        <div class="box">
+            <% for(let book of bookList) { %>
+            <section id="allbooks">
+                <div class="container_1">
+                    <div class="row1">
+                        <div class="col1">
+                            <figure class="panel-image">
+                                    <img src="https://covers.openlibrary.org/b/ISBN/<%= book.isbn %>-L.jpg"  alt="<%= book.title %> by <%= book.author%>">
+                            </figure>
+                        </div>
+                        <div class="col2">
+                            <div class="col2-row1">
+                                <h2 class="col2">
+                                       <%= book.title %> </br> #Book by <%= book.author %>
+                                </h2>
+                            </div>
+                            <div class="col2-row2">
+                                <small><strong>How strongly I recommend it:</strong></small> <small style="color:blue;"><%= book.score %></small><small>/10</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <textarea type="text" id="displaySummary<%= book.isbn %>" class="form-control summary" readonly><%= book.summary %></textarea>
+                        <form class="edit" action="/edit" method="post">
+                            <input type="hidden" name="summaryISBN" value="<%= book.isbn %>">
+                            <textarea type="text" id="editSummary<%= book.isbn %>" class="form-control summary" name="editSummary" value="<%= book.summary %>" hidden><%= book.summary %></textarea>
+                            </br>
+                            <button type="submit" id="submit<%= book.isbn %>" class="btn btn-primary" hidden>Save Review</button>
+                        </form>
+                        <button type="submit" id="edit<%=book.isbn%>" class="btn btn-primary" onclick="handler('<%=book.isbn%>')">Edit Review</button>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+        </div>
+        <script>
+            function handler(isbn) {
+               document.getElementById("editSummary" + isbn).removeAttribute("hidden")
+               document.getElementById("submit" + isbn).removeAttribute("hidden")
+               document.getElementById("edit" + isbn).setAttribute("hidden", true)
+               document.getElementById("displaySummary" + isbn).setAttribute("hidden", true)
+            }
+        </script>
+    
+<%- include("partials/footer.ejs") %>

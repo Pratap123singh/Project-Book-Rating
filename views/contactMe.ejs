@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+
+<form class="row gx-3 gy-2 align-items-center" action="/senderMessage" method="post">
+    <div class="contactContainer">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" style="color: white;">Your Name:</label>
+            <input type="form-control" class="form-control" id="exampleFormControlInput1" name="senderName">
+        </div>
+    
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" style="color: white;">Your Email Address:</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="senderEmail">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Type Your Message 👇</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize: none;" name="senderMessage"></textarea>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit Message</button>
+        </div>
+    </div>
+</form>
+
+<%- include("partials/footer.ejs") %>
